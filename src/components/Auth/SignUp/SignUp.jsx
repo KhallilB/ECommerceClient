@@ -29,7 +29,10 @@ class SignUp extends React.Component {
 
         await this.Auth.signup(firstName, lastName, email, password)
             .then(res => {
-                console.log("Response: ", res);
+                console.log(res);
+            })
+            .catch(err => {
+                console.log(err);
             })
     };
 
