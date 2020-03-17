@@ -1,5 +1,5 @@
-import API from './API';
-
+import axios from 'axios';
+import { API } from './API_URL';
 class AuthService {
   constructor() {
     this.signup = this.signup.bind(this);
@@ -7,17 +7,13 @@ class AuthService {
   }
 
   async signup(firstName, lastName, email, password) {
-    return await fetch({
-      method: 'POST',
-      url: `${API}/auth/signup`,
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: firstName,
-      lastName,
-      email,
-      password
-    })
+    await axios
+      .post(`${API}/auth/signup `, {
+        firstName,
+        lastName,
+        email,
+        password
+      })
       .then(res => {
         console.log(res);
         return res;
@@ -29,15 +25,11 @@ class AuthService {
   }
 
   async login(email, password) {
-    return await fetch({
-      method: 'POST',
-      url: `${API}/auth/login`,
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: email,
-      password
-    })
+    await axios
+      .post(`${API}/auth/login`, {
+        email,
+        password
+      })
       .then(res => {
         console.log(res);
         return res;
