@@ -7,6 +7,7 @@ import {
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import LogIn from './components/Auth/LogIn/LogIn';
+import SignUp from './components/Auth/SignUp/SignUp';
 
 const Routes = () => {
   return (
@@ -14,6 +15,11 @@ const Routes = () => {
       <Navbar />
       <Switch>
         <Route path='/' exact component={Home} />
+        <Route
+          path='/auth/signup'
+          exact
+          component={SignUp}
+        />
         <Route path='/auth/login' exact component={LogIn} />
       </Switch>
     </Router>
