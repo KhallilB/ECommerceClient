@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 class Navbar extends React.Component {
@@ -10,17 +11,17 @@ class Navbar extends React.Component {
     render() {
         return (
             <div className="navbar__container">
-                <div className="navbar__list_items">
+                <div className="navbar__list_items_left">
                     <h1>Cella</h1>
                     <ul>
-                        <li>Home</li>
-                        <li>Products</li>
+                        <Link to="/"><li>Home</li></Link>
+                        <Link to="/products"><li>Products</li></Link>
                     </ul>
                 </div>
-                <div className="navbar__list_items">
+                <div className="navbar__list_items_right">
                     <ul>
-                        <li>Log In</li>
-                        <li>Sign Up</li>
+                        <Link to="/auth/login"><li>Log In</li></Link>
+                        <Link to="/auth/signup"><li>Sign Up</li></Link>
                     </ul>
                 </div>
             </div>

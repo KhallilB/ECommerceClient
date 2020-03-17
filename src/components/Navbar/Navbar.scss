@@ -1,0 +1,57 @@
+@import '../../styles/helpers/mixin';
+@import '../../styles/helpers/variables';
+
+.navbar__container {
+  display: flex;
+  flex-direction: row;
+
+  background-color: $color3;
+  color: $white;
+
+  width: 100%;
+
+  h1 {
+    @include primary-font($size: 2.7em);
+
+    padding-left: 20px;
+  }
+
+  li {
+    @include secondary-font($size: 1em, $weight: 600);
+  }
+
+  .navbar__list_items_left {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+
+      li {
+        padding: 20px;
+      }
+    }
+  }
+
+  .navbar__list_items_right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    border: solid 2px black;
+    width: 100%;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+
+      li {
+        padding: 20px;
+      }
+    }
+  }
+}
