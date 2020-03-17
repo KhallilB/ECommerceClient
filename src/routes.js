@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
+import LogIn from './components/Auth/LogIn/LogIn';
 
 const Routes = () => {
   return (
@@ -13,6 +14,7 @@ const Routes = () => {
       <Navbar />
       <Switch>
         <Route path='/' exact component={Home} />
+        <Route path='/auth/login' exact component={LogIn} />
       </Switch>
     </Router>
   );
